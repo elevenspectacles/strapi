@@ -55,10 +55,12 @@ export interface VariationsProduct extends Schema.Component {
   collectionName: 'components_variations_products';
   info: {
     displayName: 'Product';
+    description: '';
   };
   attributes: {
     image: Attribute.Media & Attribute.Required;
-    color: Attribute.Enumeration<['red', 'green', 'blue', 'black']>;
+    lensColor: Attribute.Enumeration<['red', 'green', 'blue', 'black']>;
+    frameColor: Attribute.Enumeration<['black', 'white']>;
   };
 }
 
