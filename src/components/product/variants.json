@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_product_variants",
+  "info": {
+    "displayName": "variants",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "thumbnails": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "frameColor": {
+      "type": "enumeration",
+      "enum": [
+        "black",
+        "gray",
+        "white",
+        "gold"
+      ],
+      "default": "black"
+    },
+    "lensColor": {
+      "type": "enumeration",
+      "enum": [
+        "black",
+        "gray",
+        "red",
+        "yellow"
+      ],
+      "default": "black"
+    }
+  }
+}

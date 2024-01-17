@@ -1,5 +1,22 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ProductVariants extends Schema.Component {
+  collectionName: 'components_product_variants';
+  info: {
+    displayName: 'variants';
+    icon: 'apps';
+    description: '';
+  };
+  attributes: {
+    thumbnails: Attribute.Media;
+    images: Attribute.Media;
+    frameColor: Attribute.Enumeration<['black', 'gray', 'white', 'gold']> &
+      Attribute.DefaultTo<'black'>;
+    lensColor: Attribute.Enumeration<['black', 'gray', 'red', 'yellow']> &
+      Attribute.DefaultTo<'black'>;
+  };
+}
+
 export interface SharedMetaSocial extends Schema.Component {
   collectionName: 'components_shared_meta_socials';
   info: {
@@ -51,25 +68,12 @@ export interface SharedSeo extends Schema.Component {
   };
 }
 
-export interface VariationsProduct extends Schema.Component {
-  collectionName: 'components_variations_products';
-  info: {
-    displayName: 'Product';
-    description: '';
-  };
-  attributes: {
-    image: Attribute.Media & Attribute.Required;
-    lensColor: Attribute.Enumeration<['red', 'green', 'blue', 'black']>;
-    frameColor: Attribute.Enumeration<['black', 'white']>;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'product.variants': ProductVariants;
       'shared.meta-social': SharedMetaSocial;
       'shared.seo': SharedSeo;
-      'variations.product': VariationsProduct;
     }
   }
 }
