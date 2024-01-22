@@ -15,10 +15,20 @@
     "status": {
       "type": "enumeration",
       "enum": [
-        "received"
+        "pending",
+        "processing",
+        "shipped",
+        "delivered",
+        "cancelled",
+        "onhold",
+        "refunded",
+        "failed",
+        "returned",
+        "awaitingPayment",
+        "completed"
       ],
       "required": true,
-      "default": "received"
+      "default": "pending"
     },
     "products": {
       "type": "relation",

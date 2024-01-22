@@ -427,9 +427,23 @@ export interface ApiOrderOrder extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    status: Attribute.Enumeration<['received']> &
+    status: Attribute.Enumeration<
+      [
+        'pending',
+        'processing',
+        'shipped',
+        'delivered',
+        'cancelled',
+        'onhold',
+        'refunded',
+        'failed',
+        'returned',
+        'awaitingPayment',
+        'completed'
+      ]
+    > &
       Attribute.Required &
-      Attribute.DefaultTo<'received'>;
+      Attribute.DefaultTo<'pending'>;
     products: Attribute.Relation<
       'api::order.order',
       'oneToMany',
