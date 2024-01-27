@@ -13,4 +13,17 @@ export default ({ env }) => ({
       },
     },
   },
+  email: {
+    config: {
+      provider: "strapi-provider-email-brevo",
+      providerOptions: {
+        apiKey: process.env.BREVO_API,
+      },
+      settings: {
+        defaultSenderEmail: "noreply@elevenspectacles.com",
+        defaultSenderName: "Eleven Spectacles",
+        defaultReplyTo: "support@elevenspectacles.com",
+      },
+    },
+  },
 });

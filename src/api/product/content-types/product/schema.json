@@ -54,20 +54,6 @@
       "required": true,
       "default": "male"
     },
-    "type": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "enumeration",
-      "enum": [
-        "optical",
-        "sunglasses"
-      ],
-      "default": "sunglasses",
-      "required": true
-    },
     "slug": {
       "pluginOptions": {
         "i18n": {

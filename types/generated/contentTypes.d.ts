@@ -969,14 +969,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<'male'>;
-    type: Attribute.Enumeration<['optical', 'sunglasses']> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Attribute.DefaultTo<'sunglasses'>;
     slug: Attribute.String &
       Attribute.Unique &
       Attribute.SetPluginOptions<{
