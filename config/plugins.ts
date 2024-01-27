@@ -20,7 +20,7 @@ export default ({ env }) => ({
         apiKey: process.env.BREVO_API,
       },
       settings: {
-        defaultSenderEmail: "noreply@elevenspectacles.com",
+        defaultSenderEmail: "no-reply@elevenspectacles.com",
         defaultSenderName: "Eleven Spectacles",
         defaultReplyTo: "support@elevenspectacles.com",
       },
