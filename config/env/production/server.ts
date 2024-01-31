@@ -5,6 +5,6 @@ export default ({ env }) => ({
     keys: env.array("APP_KEYS"),
   },
   admin: {
-    url: "/admin",
+    url: "/strapi/admin",
   },
 });
