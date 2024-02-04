@@ -30,10 +30,13 @@
       "required": true,
       "default": "pending"
     },
-    "products": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::product.product"
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.item"
+    },
+    "total": {
+      "type": "integer"
     }
   }
 }

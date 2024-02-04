@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_product_items",
+  "info": {
+    "displayName": "item"
+  },
+  "options": {},
+  "attributes": {
+    "product_variation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-variation.product-variation"
+    },
+    "quantity": {
+      "type": "integer"
+    }
+  }
+}

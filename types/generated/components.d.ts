@@ -1,5 +1,20 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ProductItem extends Schema.Component {
+  collectionName: 'components_product_items';
+  info: {
+    displayName: 'item';
+  };
+  attributes: {
+    product_variation: Attribute.Relation<
+      'product.item',
+      'oneToOne',
+      'api::product-variation.product-variation'
+    >;
+    quantity: Attribute.Integer;
+  };
+}
+
 export interface ProductVariants extends Schema.Component {
   collectionName: 'components_product_variants';
   info: {
@@ -71,6 +86,7 @@ export interface SharedSeo extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'product.item': ProductItem;
       'product.variants': ProductVariants;
       'shared.meta-social': SharedMetaSocial;
       'shared.seo': SharedSeo;
