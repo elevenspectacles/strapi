@@ -21,8 +21,11 @@
       "required": true
     },
     "subject": {
-      "type": "text",
+      "type": "string",
       "required": true
+    },
+    "message": {
+      "type": "text"
     }
   }
 }

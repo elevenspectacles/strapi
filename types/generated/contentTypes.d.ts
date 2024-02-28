@@ -889,7 +889,8 @@ export interface ApiContactContact extends Schema.CollectionType {
   attributes: {
     name: Attribute.String & Attribute.Required;
     email: Attribute.String & Attribute.Required;
-    subject: Attribute.Text & Attribute.Required;
+    subject: Attribute.String & Attribute.Required;
+    message: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
