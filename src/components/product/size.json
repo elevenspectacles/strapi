@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_product_sizes",
+  "info": {
+    "displayName": "specs",
+    "icon": "magic",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "temple": {
+      "type": "integer"
+    },
+    "bridge": {
+      "type": "integer"
+    },
+    "lens": {
+      "type": "integer"
+    },
+    "material": {
+      "type": "string"
+    }
+  }
+}

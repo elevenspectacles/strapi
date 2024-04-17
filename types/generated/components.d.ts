@@ -15,6 +15,21 @@ export interface ProductItem extends Schema.Component {
   };
 }
 
+export interface ProductSize extends Schema.Component {
+  collectionName: 'components_product_sizes';
+  info: {
+    displayName: 'specs';
+    icon: 'magic';
+    description: '';
+  };
+  attributes: {
+    temple: Attribute.Integer;
+    bridge: Attribute.Integer;
+    lens: Attribute.Integer;
+    material: Attribute.String;
+  };
+}
+
 export interface ProductVariants extends Schema.Component {
   collectionName: 'components_product_variants';
   info: {
@@ -87,6 +102,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'product.item': ProductItem;
+      'product.size': ProductSize;
       'product.variants': ProductVariants;
       'shared.meta-social': SharedMetaSocial;
       'shared.seo': SharedSeo;
