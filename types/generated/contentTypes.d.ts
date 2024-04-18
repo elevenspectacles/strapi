@@ -1024,7 +1024,7 @@ export interface ApiContactContact extends Schema.CollectionType {
   info: {
     singularName: 'contact';
     pluralName: 'contacts';
-    displayName: 'contact';
+    displayName: 'Contact';
     description: '';
   };
   options: {
@@ -1206,20 +1206,6 @@ export interface ApiProductVariationProductVariation
       'manyToOne',
       'api::product.product'
     >;
-    lense: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    frame: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     quantity: Attribute.Integer &
       Attribute.SetPluginOptions<{
         i18n: {
