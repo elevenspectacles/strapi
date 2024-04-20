@@ -1082,7 +1082,6 @@ export interface ApiOrderOrder extends Schema.CollectionType {
     > &
       Attribute.Required &
       Attribute.DefaultTo<'pending'>;
-    items: Attribute.Component<'product.item', true>;
     total: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1119,12 +1118,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
     };
   };
   attributes: {
-    name: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     price: Attribute.Integer &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1133,14 +1126,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<100>;
-    gender: Attribute.Enumeration<['male', 'female']> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Attribute.DefaultTo<'male'>;
     slug: Attribute.String &
       Attribute.Unique &
       Attribute.SetPluginOptions<{
@@ -1148,12 +1133,19 @@ export interface ApiProductProduct extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    product_variations: Attribute.Relation<
-      'api::product.product',
-      'oneToMany',
-      'api::product-variation.product-variation'
-    >;
-    specs: Attribute.Component<'product.size', true> &
+    frame_specs: Attribute.Component<'product.size'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    lens_specs: Attribute.Component<'product.lense-specs'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    variations: Attribute.Component<'product.list', true> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1178,66 +1170,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'api::product.product',
       'oneToMany',
       'api::product.product'
-    >;
-    locale: Attribute.String;
-  };
-}
-
-export interface ApiProductVariationProductVariation
-  extends Schema.CollectionType {
-  collectionName: 'product_variations';
-  info: {
-    singularName: 'product-variation';
-    pluralName: 'product-variations';
-    displayName: 'ProductVariation';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    product: Attribute.Relation<
-      'api::product-variation.product-variation',
-      'manyToOne',
-      'api::product.product'
-    >;
-    quantity: Attribute.Integer &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    stripe_url: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::product-variation.product-variation',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::product-variation.product-variation',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::product-variation.product-variation',
-      'oneToMany',
-      'api::product-variation.product-variation'
     >;
     locale: Attribute.String;
   };
@@ -1330,7 +1262,6 @@ declare module '@strapi/types' {
       'api::contact.contact': ApiContactContact;
       'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
-      'api::product-variation.product-variation': ApiProductVariationProductVariation;
       'api::static-page.static-page': ApiStaticPageStaticPage;
     }
   }

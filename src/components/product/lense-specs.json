@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_product_lense_specs",
+  "info": {
+    "displayName": "Lense Specs",
+    "icon": "eye",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "width": {
+      "type": "integer"
+    },
+    "height": {
+      "type": "integer"
+    },
+    "curve": {
+      "type": "string"
+    },
+    "material": {
+      "type": "string"
+    },
+    "polarized": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "anti_reflective": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}

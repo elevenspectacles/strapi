@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_product_lists",
+  "info": {
+    "displayName": "list",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "stripe_url": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": false
+    },
+    "thumbnail_xs": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "slider": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

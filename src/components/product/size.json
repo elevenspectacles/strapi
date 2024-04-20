@@ -1,7 +1,7 @@
 {
   "collectionName": "components_product_sizes",
   "info": {
-    "displayName": "specs",
+    "displayName": "Frame Specs",
     "icon": "magic",
     "description": ""
   },
@@ -13,11 +13,17 @@
     "bridge": {
       "type": "integer"
     },
-    "lens": {
-      "type": "integer"
-    },
     "material": {
       "type": "string"
+    },
+    "dimensions": {
+      "type": "string"
+    },
+    "width": {
+      "type": "integer"
+    },
+    "height": {
+      "type": "integer"
     }
   }
 }

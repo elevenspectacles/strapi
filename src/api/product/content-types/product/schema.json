@@ -16,14 +16,6 @@
     }
   },
   "attributes": {
-    "name": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string"
-    },
     "price": {
       "pluginOptions": {
         "i18n": {
@@ -34,20 +26,6 @@
       "required": true,
       "default": 100
     },
-    "gender": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "enumeration",
-      "enum": [
-        "male",
-        "female"
-      ],
-      "required": true,
-      "default": "male"
-    },
     "slug": {
       "pluginOptions": {
         "i18n": {
@@ -57,13 +35,27 @@
       "type": "string",
       "unique": true
     },
-    "product_variations": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::product-variation.product-variation",
-      "mappedBy": "product"
+    "frame_specs": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "product.size"
     },
-    "specs": {
+    "lens_specs": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "product.lense-specs"
+    },
+    "variations": {
       "type": "component",
       "repeatable": true,
       "pluginOptions": {
@@ -71,7 +63,7 @@
           "localized": true
         }
       },
-      "component": "product.size"
+      "component": "product.list"
     }
   }
 }

@@ -1,49 +1,55 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface ProductItem extends Schema.Component {
-  collectionName: 'components_product_items';
+export interface ProductLenseSpecs extends Schema.Component {
+  collectionName: 'components_product_lense_specs';
   info: {
-    displayName: 'item';
+    displayName: 'Lense Specs';
+    icon: 'eye';
+    description: '';
   };
   attributes: {
-    product_variation: Attribute.Relation<
-      'product.item',
-      'oneToOne',
-      'api::product-variation.product-variation'
-    >;
-    quantity: Attribute.Integer;
+    width: Attribute.Integer;
+    height: Attribute.Integer;
+    curve: Attribute.String;
+    material: Attribute.String;
+    polarized: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<true>;
+    anti_reflective: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<true>;
+  };
+}
+
+export interface ProductList extends Schema.Component {
+  collectionName: 'components_product_lists';
+  info: {
+    displayName: 'list';
+    icon: 'bulletList';
+    description: '';
+  };
+  attributes: {
+    stripe_url: Attribute.String & Attribute.Required;
+    name: Attribute.String;
+    thumbnail_xs: Attribute.Media & Attribute.Required;
+    slider: Attribute.Media;
   };
 }
 
 export interface ProductSize extends Schema.Component {
   collectionName: 'components_product_sizes';
   info: {
-    displayName: 'specs';
+    displayName: 'Frame Specs';
     icon: 'magic';
     description: '';
   };
   attributes: {
     temple: Attribute.Integer;
     bridge: Attribute.Integer;
-    lens: Attribute.Integer;
     material: Attribute.String;
-  };
-}
-
-export interface ProductVariants extends Schema.Component {
-  collectionName: 'components_product_variants';
-  info: {
-    displayName: 'variants';
-    icon: 'apps';
-    description: '';
-  };
-  attributes: {
-    thumbnails: Attribute.Media;
-    images: Attribute.Media;
-    frameColor: Attribute.Enumeration<['black', 'gray', 'white', 'gold']> &
-      Attribute.DefaultTo<'black'>;
-    lensColor: Attribute.Enumeration<['black', 'gray', 'red', 'yellow']> &
-      Attribute.DefaultTo<'black'>;
+    dimensions: Attribute.String;
+    width: Attribute.Integer;
+    height: Attribute.Integer;
   };
 }
 
@@ -101,9 +107,9 @@ export interface SharedSeo extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'product.item': ProductItem;
+      'product.lense-specs': ProductLenseSpecs;
+      'product.list': ProductList;
       'product.size': ProductSize;
-      'product.variants': ProductVariants;
       'shared.meta-social': SharedMetaSocial;
       'shared.seo': SharedSeo;
     }
