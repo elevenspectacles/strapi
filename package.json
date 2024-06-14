@@ -19,7 +19,7 @@
     "@strapi/plugin-i18n": "^4.24.5",
     "@strapi/plugin-seo": "^1.9.8",
     "@strapi/plugin-users-permissions": "^4.24.5",
-    "@strapi/strapi": "^4.24.4",
+    "@strapi/strapi": "^4.24.5",
     "@strapi/plugin-cloud": "4.24.5",
     "pg": "^8.11.5",
     "pg-connection-string": "^2.6.2",
