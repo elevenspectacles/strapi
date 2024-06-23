@@ -14,21 +14,6 @@
     "name": {
       "type": "string",
       "required": false
-    },
-    "thumbnail_xs": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
-    },
-    "slider": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": true
     }
   }
 }

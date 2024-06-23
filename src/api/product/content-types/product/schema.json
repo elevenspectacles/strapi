@@ -64,6 +64,20 @@
         }
       },
       "component": "product.list"
+    },
+    "type": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "sunglasses",
+        "optics"
+      ],
+      "default": "sunglasses",
+      "required": true
     }
   }
 }
